@@ -1,0 +1,25 @@
+body {
+    background: #FFF01C;
+    font-family: 'Slackey', cursive;
+}
+
+.logo {
+    color: #1959A6;
+    text-decoration: underline;
+}
+
+.component {
+    background-color: #4EBECD;
+}
+
+.pic img {
+    background-color: white;
+}
+
+.wins {
+    background-color: green;
+}
+
+.losses {
+    background-color: red;
+}

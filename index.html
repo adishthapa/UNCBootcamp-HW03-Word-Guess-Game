@@ -14,11 +14,81 @@
     <!-- CDN for Custom CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+    <!-- CDN for Custom Font -->
+    <link href="https://fonts.googleapis.com/css?family=Slackey&display=swap" rel="stylesheet">
+
     <!-- Title -->
     <title>Word Guess Game</title>
 </head>
 
 <body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col text-center mt-3">
+                <img src="assets/images/spongebob_logo.png" alt="Sponge Bob Logo" width="500" height="250"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center p-3 logo">
+                <h1><strong>The Hangman Game</strong></h1>
+            </div>
+        </div>
+    </div>
+
+        <!-- The main body -->
+    <div class="component">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="row">
+                        <div class="col text-center mt-3 p-3 direction">
+                            <h2>Press any key to get started!</h2>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="col text-center pic">
+                            <img src="" alt="Helper Picture" width="400" height="800" class="p-5 border border-dark"/>
+                        </div>
+                    </div>
+            
+                    <div class="row">
+                        <div class="col text-center pt-4">
+                            <h3>_ _ _ _ _ _ _ _ _ _</h3>
+                            <h3>Number of Guesses Remaining: <span id="guesses-left-text">10</span></h3>
+                            <h3>Letters Already Guessed: <span id="guesses-text"></span></h3>
+                        </div>
+                    </div>
+            
+                    <div class="row justify-content-center">
+                        <div class="col-6 text-center">
+
+                            <div class="card wins">
+                                <div class="card-body">
+                                    Wins: <span id="wins-text">0</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-6 text-center">
+
+                            <div class="card losses">
+                                <div class="card-body">
+                                    Losses: <span id="losses-text">0</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>  
+        </div>
+    </div>
 
     <!-- CDN for Custom JS -->
     <script src="assets/javascript/game.js"></script>
