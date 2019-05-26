@@ -18,12 +18,12 @@ var guessesLeftText = document.getElementById("guesses-left-text");
 var guessesText = document.getElementById("guesses-text");
 
 // These are the content for Word Guess Game
-var characters = ["spongebob", "patrick", "squidward", "sandy"];
-var images = ["assets/images/spongebob.png", "assets/images/patrick.png", "assets/images/squidward.png", "assets/images/sandy.png"]
+var characters = ["spongebob", "patrick", "squidward", "sandy", "mr.krabs", "pearl", "mrs.puff"];
+var images = ["assets/images/spongebob.png", "assets/images/patrick.png", "assets/images/squidward.png", "assets/images/sandy.png", "assets/images/mr-krabs.png", "assets/images/pearl.png", "assets/images/mrs-puff.png"]
 
 
 // This is the randomization for the contents
-var min = 0;
+var min = 5;
 var max = characters.length;
 computerGuess = Math.floor(Math.random() * (+max - +min)) + +min;
 
@@ -36,7 +36,12 @@ for (var i = 0; i < word.length; i++) {
     if (i === word.length - 1) {
         character += "_";
     } else {
-        character += "_\xa0";
+        if (word[i] == ".") {
+            character += ".\xa0";
+            wordCount++;
+        } else {
+            character += "_\xa0";
+        }
     }
 }
 
@@ -81,11 +86,16 @@ document.onkeyup = function(event) {
         pictureText.setAttribute("src", images[computerGuess]);
         wordCount = 0;
         character= "";
-        for (i = 0; i < word.length; i++) {
+        for (var i = 0; i < word.length; i++) {
             if (i === word.length - 1) {
                 character += "_";
             } else {
-                character += "_\xa0";
+                if (word[i] == ".") {
+                    character += ".\xa0";
+                    wordCount++;
+                } else {
+                    character += "_\xa0";
+                }
             }
         }
         guessesLeft = 10;
@@ -100,11 +110,16 @@ document.onkeyup = function(event) {
         pictureText.setAttribute("src", images[computerGuess]);
         wordCount = 0;
         character= "";
-        for (i = 0; i < word.length; i++) {
+        for (var i = 0; i < word.length; i++) {
             if (i === word.length - 1) {
                 character += "_";
             } else {
-                character += "_\xa0";
+                if (word[i] == ".") {
+                    character += ".\xa0";
+                    wordCount++;
+                } else {
+                    character += "_\xa0";
+                }
             }
         }
         guessesLeft = 10;
