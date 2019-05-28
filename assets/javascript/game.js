@@ -10,6 +10,7 @@ var losses = 0;
 var guessesLeft = 10;
 var guesses = [];
 
+var soundText = document.getElementById("sound-text");
 var pictureText = document.getElementById("picture-text");
 var characterText = document.getElementById("character-text");
 var winsText = document.getElementById("wins-text");
@@ -18,12 +19,12 @@ var guessesLeftText = document.getElementById("guesses-left-text");
 var guessesText = document.getElementById("guesses-text");
 
 // These are the content for Word Guess Game
-var characters = ["spongebob", "patrick", "squidward", "sandy", "mr.krabs", "pearl", "mrs.puff"];
-var images = ["assets/images/spongebob.png", "assets/images/patrick.png", "assets/images/squidward.png", "assets/images/sandy.png", "assets/images/mr-krabs.png", "assets/images/pearl.png", "assets/images/mrs-puff.png"]
-
+var characters = ["spongebob", "patrick", "squidward", "sandy", "mr.krabs", "pearl", "mrs.puff", "gary", "plankton"];
+var images = ["assets/images/spongebob.png", "assets/images/patrick.png", "assets/images/squidward.png", "assets/images/sandy.png", "assets/images/mr-krabs.png", "assets/images/pearl.png", "assets/images/mrs-puff.png", "assets/images/gary.png", "assets/images/plankton.png"]
+var sounds = ["assets/sounds/spongebob.mp3", "assets/sounds/patrick.mp3", "assets/sounds/squidward.wav", "assets/sounds/sandy.wav", "assets/sounds/mr-krabs.mp3", "assets/sounds/pearl.mp3", "assets/sounds/mrs-puff.wav", "assets/sounds/gary.wav", "assets/sounds/plankton.mp3"]
 
 // This is the randomization for the contents
-var min = 5;
+var min = 0;
 var max = characters.length;
 computerGuess = Math.floor(Math.random() * (+max - +min)) + +min;
 
@@ -80,6 +81,7 @@ document.onkeyup = function(event) {
         }
 
     } else if (wordCount === word.length) {
+        soundText.setAttribute("src", sounds[computerGuess]);
         wins++;
         computerGuess = Math.floor(Math.random() * (+max - +min)) + +min;
         word = characters[computerGuess];

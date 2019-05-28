@@ -23,11 +23,20 @@
 
 <body>
 
+    <iframe src="assets/sounds/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+
+    <audio autoplay loop>
+        <source src="assets/sounds/background.mp3"/>
+    </audio>
+
+    <audio autoplay id="sound-text">
+    </audio>
+
     <div class="container">
 
         <div class="row">
             <div class="col text-center mt-3">
-                <img src="assets/images/spongebob_logo.png" alt="Sponge Bob Logo" width="500" height="250"/>
+                <img src="assets/images/spongebob_logo.png" alt="Sponge Bob Logo" width="400" height="150"/>
             </div>
         </div>
 
@@ -58,10 +67,13 @@
             
                     <div class="row">
                         <div class="col text-center pt-4">
+
                             <h3><span id="character-text"></span></h3>
                             <h3>Number of Guesses Remaining: <span id="guesses-left-text">10</span></h3>
                             <h3>Letters Already Guessed: <span id="guesses-text"></span></h3>
+
                         </div>
+
                     </div>
             
                     <div class="row justify-content-center">
@@ -81,10 +93,9 @@
                                     Losses: <span id="losses-text">0</span>
                                 </div>
                             </div>
-                            
+    
                         </div>
                     </div>
-
                 </div>
             </div>  
         </div>
