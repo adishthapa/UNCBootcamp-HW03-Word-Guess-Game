@@ -31,6 +31,7 @@ computerGuess = Math.floor(Math.random() * (+max - +min)) + +min;
 // These are used to keep track of the current content
 var word = characters[computerGuess];
 var wordCount = 0;
+var correctGuesses = [];
 
 // Creates the guess format for the current content and displays it
 for (var i = 0; i < word.length; i++) {
@@ -53,14 +54,14 @@ pictureText.setAttribute("src", images[computerGuess]);
 document.onkeyup = function(event) {
 
     // Checks to see if user can keep guessing or not
-    if (guessesLeft > 0 && wordCount!= word.length) {
+    if (guessesLeft > 0 && wordCount != word.length) {
 
         var userGuess = event.keyCode;
         var charGuess = String.fromCharCode(userGuess).toLowerCase();
     
         if ((event.keyCode >= 65 && event.keyCode <= 90)) {
 
-            if (characters[computerGuess].includes(charGuess)) {
+            if (characters[computerGuess].includes(charGuess) && !(correctGuesses.includes(charGuess))) {
                 for (var j = 0; j < word.length; j++) {
                     if (word[j] === charGuess) {
                         if (j != 0) {
@@ -72,10 +73,13 @@ document.onkeyup = function(event) {
                         }
                     }
                 }
+                correctGuesses.push(charGuess);
 
             } else {
-                guessesLeft--;
-                guesses.push(String.fromCharCode(userGuess).toLowerCase());
+                if (!(correctGuesses.includes(charGuess)) && !(guesses.includes(charGuess))) {
+                    guessesLeft--;
+                    guesses.push(String.fromCharCode(userGuess).toLowerCase());
+                }
             }
 
         }
@@ -102,6 +106,7 @@ document.onkeyup = function(event) {
         }
         guessesLeft = 10;
         guesses = [];
+        correctGuesses = [];
 
         alert("YAY! YOU DID IT!!!")
 
@@ -126,6 +131,7 @@ document.onkeyup = function(event) {
         }
         guessesLeft = 10;
         guesses = [];
+        correctGuesses = [];
 
         alert("Better luck next time!");
     }
