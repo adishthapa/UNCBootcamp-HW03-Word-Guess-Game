@@ -18,7 +18,7 @@ var lossesText = document.getElementById("losses-text");
 var guessesLeftText = document.getElementById("guesses-left-text");
 var guessesText = document.getElementById("guesses-text");
 
-// These are the content for Word Guess Game
+// These are the content for the Word Guess Game
 var characters = ["spongebob", "patrick", "squidward", "sandy", "mr.krabs", "pearl", "mrs.puff", "gary", "plankton"];
 var images = ["assets/images/spongebob.png", "assets/images/patrick.png", "assets/images/squidward.png", "assets/images/sandy.png", "assets/images/mr-krabs.png", "assets/images/pearl.png", "assets/images/mrs-puff.png", "assets/images/gary.png", "assets/images/plankton.png"]
 var sounds = ["assets/sounds/spongebob.mp3", "assets/sounds/patrick.mp3", "assets/sounds/squidward.wav", "assets/sounds/sandy.wav", "assets/sounds/mr-krabs.mp3", "assets/sounds/pearl.mp3", "assets/sounds/mrs-puff.wav", "assets/sounds/gary.wav", "assets/sounds/plankton.mp3"]
@@ -61,7 +61,7 @@ document.onkeyup = function(event) {
     
         if ((event.keyCode >= 65 && event.keyCode <= 90)) {
 
-            if (characters[computerGuess].includes(charGuess) && !(correctGuesses.includes(charGuess))) {
+            if (word.includes(charGuess) && !(correctGuesses.includes(charGuess))) {
                 for (var j = 0; j < word.length; j++) {
                     if (word[j] === charGuess) {
                         if (j != 0) {
@@ -84,6 +84,7 @@ document.onkeyup = function(event) {
 
         }
 
+    // Checks to see if the user guessed the word correctly
     } else if (wordCount === word.length) {
         soundText.setAttribute("src", sounds[computerGuess]);
         wins++;
@@ -110,6 +111,7 @@ document.onkeyup = function(event) {
 
         alert("YAY! YOU DID IT!!!")
 
+    // Takes the following steps if the user was not able to guess correctly
     } else {
         losses++;
         computerGuess = Math.floor(Math.random() * (+max - +min)) + +min;
@@ -136,6 +138,7 @@ document.onkeyup = function(event) {
         alert("Better luck next time!");
     }
 
+    // Writes the following updates to the HTML
     characterText.textContent = character;
     winsText.textContent = wins;
     lossesText.textContent = losses;
