@@ -1,12 +1,21 @@
-# UNCBootcamp-HW03-Word-Guess-Game
-UNC Coding Bootcamp HW 03 Word Guess Game
+# Spongebob Word Guess Game
 
-This is a Spongebob Square Pants Word Guess Game. <br>
+A "Hangman" style word guess game based on the popular cartoon series, **SpongeBob SquarePants.**
 
-You will be shown a picture of one of the characters from the show and you will have to guess their name. <br>
+## Game Instructions
 
-You have 10 attempts to guess their name. <br>
-If you guess it right, you will see an alert saying "YAY! YOU DID IT!!!". <br>
-If you guess it wrong, you will see an alert saying "Better luck next time!". <br>
+1. Press any key to start guessing the name of the character shown on the screen
+2. Keep guessing letters to complete the name of the character
+3. If you guess the name correctly within 10 turns, you win the round
+4. If you run out of guesses, you loose the round
 
-Game Link:[https://adishthapa.github.io/UNCBootcamp-HW03-Word-Guess-Game/](https://adishthapa.github.io/UNCBootcamp-HW03-Word-Guess-Game/)
+## Built With
+
+- Bootstrap
+- CSS3
+- HTML5
+- JavaScript
+
+## Deployed Link
+
+[https://adishthapa.github.io/UNCBootcamp-HW03-Word-Guess-Game](https://adishthapa.github.io/UNCBootcamp-HW03-Word-Guess-Game)
