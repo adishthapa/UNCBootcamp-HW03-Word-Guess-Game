@@ -18,4 +18,4 @@ A "Hangman" style word guess game based on the popular cartoon series, **SpongeB
 
 ## Deployed Link
 
-[https://adishthapa.github.io/UNCBootcamp-HW03-Word-Guess-Game](https://adishthapa.github.io/UNCBootcamp-HW03-Word-Guess-Game)
+[https://adishthapa.github.io/spongebob-word-guess-game](https://adishthapa.github.io/spongebob-word-guess-game)
